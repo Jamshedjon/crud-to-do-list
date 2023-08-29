@@ -4,12 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crud-to-do</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/form-btn.css" />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <body>
-    <h3 id="time">00:00:00</h3>
-    <p>Hh:Mm:Ss</p>
-    <h1>Todo List</h1>
-    <p>by <a href="">Jamshed Hasanjonov</a></p>
+    <div class="main container aic">
+      <div class="header-wrapper aic">
+        <h3 id="date" class="date-text">28 Ougust,2023</h3>
+        <p id="time" class="time-ptext">00:00:00</p>
+        <h1 class="title">Todo List</h1>
+        <p class="by-text">
+          by
+          <a
+            href="https://github.com/Jamshedjon/crud-to-do-list"
+            target="_blank"
+            >Jamshed Hasanjonov</a
+          >
+        </p>
+      </div>
+      <div class="form-wrapper">
+        <form id="form" class="form">
+          <input id="input" type="text" placeholder="Type todo..." />
+          <p id="error-text"></p>
+          <div class="button-wrapper">
+            <button id="addbtn" class="submit-btn" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+      <div class="todos-list">
+        <ul id="todos-list"></ul>
+      </div>
+    </div>
+
+    <div id="modal" class="modal modal-hidden">
+      <button onclick="closeFunction()" id="close-btn" class="close-btn">
+        x
+      </button>
+      <h2>Change This Todo</h2>
+      <form id="form-edit" class="form">
+        <input id="input" type="text" placeholder="Type todo..." />
+        <p id="edit-error-text"></p>
+        <div class="button-wrapper">
+          <button class="submit-btn" type="submit">Save Changes</button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      onclick="closeFunction()"
+      id="overlay"
+      class="overlay overlay-hidden"
+    ></div>
     <script src="./app.js"></script>
   </body>
 </html>
